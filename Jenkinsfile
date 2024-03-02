@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Build Docker image') {
     steps {
-        bat 'docker build -t jenkinsdocker/jenkinsdockerintegration-0.0.1 .'
+        bat 'docker build -t jenkinsdocker1/jenkinsdockerintegration-0.0.1 .'
     }
 }
 
