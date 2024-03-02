@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Build Docker image') {
     steps {
-        bat 'docker build -t jenkinsdocker1/jenkinsdockerintegration-0.0.1 .'
+        bat 'docker build -t jenkinsdocker2/jenkinsdockerintegration-0.0.1 .'
     }
 }
 
@@ -24,7 +24,8 @@ stage('Push to Docker Hub') {
     steps {
         script {
             bat 'docker login -u kpcreddy -p Dattu@123'
-            bat 'docker push docker.io/jenkinsdocker/jenkinsdockerintegration-0.0.1'
+            bat 'docker tag jenkinsdocker2/jenkinsdockerintegration-0.0.1 kpcreddy/dockjen2'
+            bat 'docker push docker.io/kpcreddy/dockjen2'
         }
     }
 }
