@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class JenDockController {
 	@GetMapping("/show")
 	public String showData() {
-		return "This application is running from Jenkins, First pushed to github and then Jenkins converted this as Image and pushed that to dockerhub";
+		return "This application is running from Jenkins, First pushed to github and then Jenkins converted this as Image and pushed that to dockerhub..";
 	}
 
 }
