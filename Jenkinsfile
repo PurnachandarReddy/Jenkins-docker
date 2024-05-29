@@ -14,6 +14,14 @@ pipeline {
                 }
             }
         }
+        stage('SonarQube analysis') {
+//    def scannerHome = tool 'SonarScanner 4.0';
+        steps{
+        withSonarQubeEnv('sonarqube-10.5.1') { 
+        // If you have configured more than one global server connection, you can specify its name
+//      sh "${scannerHome}/bin/sonar-scanner"
+        bat "mvn sonar:sonar"
+    }
         stage('Build Docker image') {
     steps {
         bat 'docker build -t jenkinsdocker2/jenkinsdockerintegration-0.0.1 .'
