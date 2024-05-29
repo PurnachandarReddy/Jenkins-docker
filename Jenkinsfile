@@ -22,6 +22,9 @@ pipeline {
 //      sh "${scannerHome}/bin/sonar-scanner"
         bat "mvn sonar:sonar"
     }
+        }
+        }
+            
         stage('Build Docker image') {
     steps {
         bat 'docker build -t jenkinsdocker2/jenkinsdockerintegration-0.0.1 .'
